@@ -1,0 +1,85 @@
+@mixin text() {
+  font-family: "Adobe نسخ Medium", Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  margin-bottom: 30px;
+  color: rgb(221, 6, 35);
+  padding: 20px;
+}
+@mixin border($color, $wieght, $raduis, $fontcolor, $fontsize, $width) {
+  border: $wieght solid $color;
+  border-radius: $raduis;
+  background-color: $color;
+  color: $fontcolor;
+  font-size: $fontsize;
+  width: $width;
+}
+
+.logo {
+  float: right;
+
+  height: 100%;
+
+  img {
+    width: 90%;
+    margin: 50px auto;
+    margin-bottom: 16px;
+
+    &:hover {
+      transform: scale(1.1);
+      transition-property: all;
+      transition-duration: 0.3s;
+      transition-timing-function: linear;
+    }
+  }
+
+  .subs {
+    margin-right: -45px;
+    margin-top: 10px;
+    padding: 0;
+    /*#6f1e51 - #ff3f5f*/
+    .subscribe {
+      border: 1px solid #6f1e51;
+      border-top-right-radius: 27px;
+      border-bottom-right-radius: 27px;
+      background-color: #6f1e51;
+      color: white;
+      font-size: 26px;
+      width: 30%;
+      height: 52px;
+      margin-left: 0px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+    .text {
+      border: 1px solid #3f3f3f;
+      border-top-left-radius: 27px;
+      border-bottom-left-radius: 27px;
+      background-color: #3f3f3f;
+      color: #949393;
+      font-size: 26px;
+      width: 44%;
+      height: 52px;
+      text-align: right;
+    }
+    .label {
+      @include text;
+      color: blanchedalmond;
+      margin-bottom: 5px;
+    }
+
+    .sing {
+      @include border(rgb(61, 4, 192), 1px, 27px, white, 28px, 40%);
+      margin: 0 auto;
+      height: 50px;
+      &:hover {
+        transform: scale(1.1);
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: linear;
+      }
+    }
+  }
+}

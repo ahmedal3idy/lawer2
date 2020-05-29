@@ -1,0 +1,105 @@
+@mixin text() {
+  font-family: "Adobe نسخ Medium", Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  margin-bottom: 30px;
+  color: rgb(221, 6, 35);
+  padding: 20px;
+}
+@mixin border($color, $wieght, $raduis, $fontcolor, $fontsize, $width) {
+  border: $wieght solid $color;
+  border-radius: $raduis;
+  background-color: $color;
+  color: $fontcolor;
+  font-size: $fontsize;
+  width: $width;
+}
+/* animation */
+@keyframes updown {
+  0% {
+    top: 110px;
+  }
+  50% {
+    top: 94px;
+  }
+  100% {
+    top: 110px;
+  }
+}
+/*end animation*/
+/*hover*/
+.present:hover {
+  animation: updown 0.5s 1 ease;
+  background: rgba(247, 237, 237, 0.418);
+
+  .links:hover {
+    background: rgba(0, 0, 0, 0.74);
+  }
+}
+/*end hover*/
+.parent {
+  float: left;
+}
+.present {
+  background: rgba(247, 237, 237, 0.342);
+  border-radius: 50px;
+  position: absolute;
+  top: 110px;
+  left: 50px;
+
+  font-family: "Adobe نسخ Medium", Arial, Helvetica, sans-serif;
+  /*media*/
+  @media (min-width: 992px) {
+    max-width: 90%;
+  }
+  /* end media*/
+  h2 {
+    @include text;
+  }
+  ul li {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: right;
+    line-height: 40px;
+    margin-bottom: 30px;
+    color: white;
+    list-style-type: none;
+  }
+  .links {
+    margin-right: 5px;
+    background: rgba(0, 0, 0, 0.527);
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-top: 143px;
+    text-align: center;
+    width: 98%;
+    li {
+      display: inline-block;
+      margin: 0px;
+      font-size: 20px;
+      padding-bottom: 5px;
+
+      .fab {
+        margin-top: 20px;
+        padding: 20px;
+        &:hover {
+          transform: rotate(360deg) scale(1.1);
+          transition-property: all;
+          transition-duration: 0.4s;
+          transition-timing-function: linear;
+        }
+      }
+      .fa-facebook {
+        color: #4267b2;
+      }
+      .fa-instagram {
+        color: black;
+      }
+      .fa-google-plus {
+        color: red;
+      }
+    }
+  }
+}

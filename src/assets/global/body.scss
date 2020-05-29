@@ -1,0 +1,11 @@
+body {
+    background-color:rgb(116, 114, 114);
+  perspective: 600px;
+  box-sizing: border-box;
+  overflow: hidden;
+  direction: rtl;
+  @import url("../global//head2.scss");
+  @import url("../global/globalcom.scss");
+  
+}
+

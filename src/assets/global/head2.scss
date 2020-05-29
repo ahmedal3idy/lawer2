@@ -1,0 +1,123 @@
+@mixin border($color, $wieght, $raduis, $fontcolor, $fontsize, $width) {
+  border: $wieght solid $color;
+  border-radius: $raduis;
+  background-color: $color;
+  color: $fontcolor;
+  font-size: $fontsize;
+  width: $width;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #157ce2;
+}
+
+#nav {
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.93);
+
+  height: 790px;
+  position: fixed;
+  top: 0px;
+
+  z-index: 2000;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+    
+  }
+    .router-link-exact-active i {
+      color:#15fffd;
+    }
+  
+  button {
+    @include border(rgba(0, 0, 0, 0.452), 1px, 10px, white, 20px, 80px);
+    position: fixed;
+    top: 0px;
+    left: 5px;
+    float: right;
+    width: 84px;
+    height: 56px;
+    z-index: 2010;
+
+    .fas {
+      font-size: 43px;
+      text-align: center;
+    }
+  }
+  div {
+    float: right;
+    margin: 60px auto;
+    a {
+      img {
+        width: 70%;
+        padding-top: 90px;
+      }
+    }
+  }
+
+  @for $i from 1 through 4 {
+    .move-#{$i} {
+      color: red;
+      left: -20px;
+      text-align: center;
+      opacity: 0;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: linear;
+      transition-delay: ($i + 1/2);
+    }
+  }
+
+  @for $i from 1 through 4 {
+    .back-#{$i} {
+      color: red;
+
+      transition-property: all;
+      transition-duration: 30s;
+      transition-timing-function: linear;
+      transition-delay: ($i/5);
+    }
+  }
+
+  ul {
+    font-family: Adobe نسخ Medium;
+    display: block;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 19%;
+    left: 27%;
+
+    li {
+        margin-bottom: -25px;
+        width: 136%;
+        text-align: center;
+
+      a {
+        color: rgb(253, 251, 251);
+        font-size: 32px;
+        text-align: center;
+        line-height: 57px;
+        text-decoration: none;
+        span{
+            font-size: 21px;
+            position: relative;
+            top: 0;
+            right: -3px;
+            display: block;
+            margin-bottom: -2px;
+            visibility: hidden;
+            color:#26dce6;
+        }
+      }
+    }
+  }
+}
